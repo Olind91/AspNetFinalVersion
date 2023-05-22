@@ -32,8 +32,10 @@ namespace OskarLAspNet.Controllers
                 category = await _productCategoryService.CreateProductCategoryAsync(viewModel);
                 if (category != null)
 
-                    //201
-                    return Created("", category);
+
+                TempData["SuccessMessage"] = "Category created successfully.";
+                
+                return RedirectToAction("Index", "Admin");
             }
 
             return View();
@@ -42,9 +44,17 @@ namespace OskarLAspNet.Controllers
 
 
         [Authorize(Roles = "admin")]
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
+            if (ModelState.IsValid)
+            {
+                var categories = await _productCategoryService.GetCategoriesAsync();
+                if (categories != null)
+
+                    return Ok(categories);
+            }
             return View();
         }
+
     }
 }

@@ -2,10 +2,18 @@
     <div class="container">
         <h3 class="admin-title">Welcome @User.Identity.Name! This is your admin dashboard.</h3>  
 
+
+        <!-- Visar success-meddelande vid skapande av ny tag eller kategory -->
+        @if (ViewBag.SuccessMessage != null)
+        {
+            <div class="alert alert-success centered-message">@ViewBag.SuccessMessage</div>
+        }
+
+
         <div class="admin-buttons">
          
             <div class="dropdown">
-                <button class="admin-button dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn-theme dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Show Stuff!
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -18,7 +26,7 @@
 
 
             <div class="dropdown">
-                <button class="admin-button dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                <button class="btn-theme dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Create Stuff!
                 </button>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">

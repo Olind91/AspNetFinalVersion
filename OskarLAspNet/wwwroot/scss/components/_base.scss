@@ -17,4 +17,10 @@ html, body {
 
 .invalid {
     border: 1px solid $color-theme-1 !important;
-} 
+}
+
+.centered-message {
+    text-align: center;
+    margin: 0 auto;
+    width: 50%;
+}

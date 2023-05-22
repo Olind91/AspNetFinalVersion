@@ -30,9 +30,9 @@ namespace OskarLAspNet.Controllers
                 tag = await _tagService.CreateTagAsync(viewModel);
                 if (tag != null)
 
-                    //201
-                    return Created("", tag);
-                RedirectToAction("/");
+
+                    TempData["SuccessMessage"] = "Tag created successfully.";
+                return RedirectToAction("Index", "Admin");
             }
 
             return View();

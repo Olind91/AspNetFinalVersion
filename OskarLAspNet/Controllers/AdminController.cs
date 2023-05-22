@@ -30,6 +30,10 @@ namespace OskarLAspNet.Controllers
         [Authorize(Roles = "admin")]
         public IActionResult Index()
         {
+            if (TempData.TryGetValue("SuccessMessage", out var successMessage))
+            {
+                ViewBag.SuccessMessage = successMessage.ToString();
+            }
             return View();
         }
 

@@ -1,1 +1,11 @@
-﻿<h1>LÄGG TILL GET ALL CATEGORIS HIT PLS</h1>
+﻿@model IEnumerable<ProductCategory>
+
+@{
+    ViewData["Title"] = "Categories";
+}
+
+    @foreach(var category in Model){
+        <div>
+            @category.CategoryName
+        </div>
+    }
