@@ -1,0 +1,33 @@
+﻿<section class="admin-section">
+    <div class="container">
+        <h3 class="admin-title">Welcome @User.Identity.Name! This is your admin dashboard.</h3>  
+
+        <div class="admin-buttons">
+         
+            <div class="dropdown">
+                <button class="admin-button dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Show Stuff!
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="GetAllUsers">Show all registered users</a></li>
+                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="AdminProducts">Show all registered products</a></li>
+                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="ShowAllComments">Show all registered comments from Contacts</a></li>
+
+                </ul>
+            </div>
+
+
+            <div class="dropdown">
+                <button class="admin-button dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    Create Stuff!
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" asp-controller="Products" asp-action="Create"><i class="fa fa-plus"></i> Create new Product</a></li>
+                    <li><a class="dropdown-item" asp-controller="ProductCategories" asp-action="Create"><i class="fa fa-plus"></i> Create new Category</a></li>
+                    <li><a class="dropdown-item" asp-controller="Tags" asp-action="Create"><i class="fa fa-plus"></i> Create new Tag</a></li>
+                    <li><a class="dropdown-item" asp-controller="Admin" asp-action="CreateUser"><i class="fa fa-plus"></i> Create new User</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
