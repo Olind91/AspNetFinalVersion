@@ -27,7 +27,7 @@ namespace OskarLAspNet.Models.ViewModels
 
 
         [Display(Name = "Comment")]
-        [RegularExpression(@"[\x20-\x7E]*", ErrorMessage = "Invalid comment.")] //the pattern allows any printable ASCII characters from space to tilde
+        [RegularExpression(@"^[a-öA-Ö]+(?:[ é'-][a-öA-Ö]+)*$", ErrorMessage = "Invalid comment.")] //the pattern allows any printable ASCII characters from space to tilde
         [Required(ErrorMessage = "Please fill in a comment")]
         public string Comment { get; set; } = null!;
 
