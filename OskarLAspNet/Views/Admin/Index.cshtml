@@ -1,7 +1,9 @@
-﻿<section class="admin-section">
-    <div class="container">
-        <h3 class="admin-title">Welcome @User.Identity.Name! This is your admin dashboard.</h3>  
+﻿
 
+<section class="admin-section">
+<div class="jumbotron">
+    <div class="container">
+    <h3 class="display-4">Welcome @User.Identity.Name! This is your admin dashboard.</h3>
 
         <!-- Visar success-meddelande vid skapande av ny tag eller kategory -->
         @if (ViewBag.SuccessMessage != null)
@@ -9,9 +11,12 @@
             <div class="alert alert-success centered-message">@ViewBag.SuccessMessage</div>
         }
 
-
+    <p class="lead">TEST TEST TEST TEST TEST.</p>
+    <hr class="my-4">
+    <p>TEST MORE TEST WRITE INFORMATION ABOUT ADMIN ROLE HERE MAYBE.</p>
+    <p class="lead">
         <div class="admin-buttons">
-         
+
             <div class="dropdown">
                 <button class="btn-theme dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
                     Show Stuff!
@@ -37,5 +42,7 @@
                 </ul>
             </div>
         </div>
+    </p>
     </div>
+</div>
 </section>
